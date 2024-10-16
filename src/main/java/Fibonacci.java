@@ -14,7 +14,23 @@ public class Fibonacci {
      * @param n an iteration of the fibonacci sequence.
      * @return the nth number of fibonacci sequence.
      */
-    public int fib(int n){
-        return 0;
+    public int fib(int n) {
+        if (n == 1) {
+            return 1; 
+        } else if (n == 2) {
+            return 1; 
+        }
+
+        int prev1 = 1; // fib(1)
+        int prev2 = 1; // fib(2)
+        int current = 0;
+
+        for (int i = 3; i <= n; i++) {
+            current = prev1 + prev2;  
+            prev1 = prev2;  
+            prev2 = current;  
+        }
+
+        return current;
     }
 }
